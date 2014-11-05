@@ -134,6 +134,7 @@ public class SpeakersHandler extends JSONHandler {
         }
         if (cursor.getCount() < 1) {
             LOGE(TAG, "Error querying speaker hashcodes (no records returned)");
+            cursor.close();
             return null;
         }
         HashMap<String, String> result = new HashMap<String, String>();

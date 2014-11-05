@@ -147,6 +147,7 @@ public class ExpertsHandler extends JSONHandler {
         }
         if (cursor.getCount() < 1) {
             LOGE(TAG, "Error querying expert hashcodes (no records returned)");
+            cursor.close();
             return null;
         }
         HashMap<String, String> result = new HashMap<String, String>();

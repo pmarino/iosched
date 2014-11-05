@@ -159,6 +159,7 @@ public class VideosHandler extends JSONHandler {
         }
         if (cursor.getCount() < 1) {
             LOGE(TAG, "Error querying video hashcodes (no records returned)");
+            cursor.close();
             return null;
         }
         HashMap<String, String> result = new HashMap<String, String>();
